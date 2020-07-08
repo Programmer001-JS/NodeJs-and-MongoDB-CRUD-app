@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Accounts App</title>
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h2>Accounts App</h2>
+        <a href="/" class="btn btn-primary mt-2">Account</a>
+        <a href="/add" class="btn btn-info mt-2">Add account</a>
+        <a href="/edit" class="btn btn-warning mt-2">Edit/Delete</a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-10 offset-1">
+                <h3>Edit account</h3>
+                <div class="row">
+                    <div class="col-10 offset-1">
+                        <form action="/edit_acc_db" method="POST">
+                            <input type="hidden"  name="id" value="<%= data._id %>">
+                            <input type="text" name="name" class="form-control" value="<%= data.name %>"></br>
+                            <input type="text" name="lastName" class="form-control" value="<%= data.lastName %>"></br>
+                            <input type="email" name="email" class="form-control" value="<%= data.email %>"></br>
+                            <input type="number" name="phone" class="form-control" value="<%= data.phone %>"></br>
+                            <button type="submit" class="btn btn-warning form-control">Edit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
